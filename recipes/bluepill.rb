@@ -18,7 +18,6 @@ template '/etc/bluepill/geminabox.pill' do
   variables(
     :pid => File.join(node[:geminabox][:base_directory], 'unicorn.pid'),
     :working_directory => node[:geminabox][:base_directory],
-    :exec => node[:geminabox][:unicorn][:exec],
     :config => File.join(node[:geminabox][:config_directory], 'geminabox.unicorn.app'),
     :process_user => node[:geminabox][:unicorn][:process_user],
     :process_group => node[:geminabox][:unicorn][:process_group],
