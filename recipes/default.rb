@@ -21,7 +21,7 @@ if(node[:geminabox][:nginx] || :this_is_all_we_support_now)
 end
 
 # Install the gem
-gem_package('geminabox') do
+gem_package('geminabox-inflection') do
   action :install
   version node[:geminabox][:version] if node[:geminabox][:version]
 end
