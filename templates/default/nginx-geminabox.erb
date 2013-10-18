@@ -2,7 +2,7 @@ upstream unicorn {
   server unix:<%= @socket %> fail_timeout=0;
 }
 server {
-  listen <%= [node[:geminabox][:nginx][:bind], node[:geminabox][:nginx][:port]].compact.join(':') %>;
+  listen <%= node[:geminabox][:nginx][:port]%>;
   <% if @ssl %>
   location / {
     rewrite ^/(.*)$ https://$host/$1 redirect;
